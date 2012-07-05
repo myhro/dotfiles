@@ -1,0 +1,5 @@
+# Carregar bashrc/profile:
+shell -$SHELL
+
+# Terminal de 256 cores:
+term screen-256color
