@@ -52,7 +52,3 @@ inoremap <Nul> <C-x><C-o>
 " Fechar automaticamente a janela de preview:
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-" Salvar e fechar buffer:
-nmap <silent> <C-s> :silent w<CR>
-nmap <silent> <C-q> :silent bd!<CR>

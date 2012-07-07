@@ -12,8 +12,5 @@ fi
 # Lida corretamente com acentos:
 export LANG=en_US.UTF-8
 
-# Libera o CTRL+S:
-stty -ixon
-
 # Desabilita o histórico:
 unset HISTFILE
