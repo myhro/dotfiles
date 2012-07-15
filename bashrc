@@ -2,6 +2,8 @@
 alias df='df -h'
 alias free='free -m'
 alias grep='grep --color=auto'
+alias la='ls --color=auto -lha'
+alias ll='ls --color=auto -lh'
 alias ls='ls --color=auto'
 
 # Bash completion:
