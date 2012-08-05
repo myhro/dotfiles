@@ -13,9 +13,6 @@ set viminfo=
 filetype on
 syntax on
 
-" Clipboard do sistema:
-set clipboard=unnamedplus
-
 " Tabs por espaços:
 set expandtab
 set shiftwidth=4
