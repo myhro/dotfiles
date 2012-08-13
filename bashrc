@@ -14,6 +14,11 @@ fi
 # Customização do prompt:
 export PS1='[\[\e[01;31m\]\u\[\e[01;36m\]@\[\e[01;34m\]\h\[\e[m\]:\[\e[01;37m\]\w\[\e[m\]]\$ '
 
+# Cores:
+case "$TERM" in
+    xterm*) TERM=xterm-256color
+esac
+
 # Lida corretamente com acentos:
 export LANG=en_US.UTF-8
 
