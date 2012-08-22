@@ -5,6 +5,7 @@ alias grep='grep --color=auto'
 alias la='ls --color=auto -lha'
 alias ll='ls --color=auto -lh'
 alias ls='ls --color=auto'
+alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
 # Bash completion:
 if [ -f /etc/bash_completion ]; then
