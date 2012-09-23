@@ -8,20 +8,22 @@ alias ls='ls --color=auto'
 alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
 # Bash completion:
-if [ -f /etc/bash_completion ]; then
-    source /etc/bash_completion
-fi
-
-# Customização do prompt:
-export PS1='[\[\e[01;31m\]\u\[\e[01;36m\]@\[\e[01;34m\]\h\[\e[m\]:\[\e[01;37m\]\w\[\e[m\]]\$ '
+[[ -f /etc/bash_completion ]] && source /etc/bash_completion
 
 # Cores:
 case "$TERM" in
     xterm*) TERM=xterm-256color
 esac
 
-# Lida corretamente com acentos:
-export LANG=en_US.UTF-8
+# Customização do prompt:
+export PS1='[\[\e[01;31m\]\u\[\e[01;36m\]@\[\e[01;34m\]\h\[\e[m\]:\[\e[01;37m\]\w\[\e[m\]]\$ '
 
 # Desabilita o histórico:
 unset HISTFILE
+
+# Lida corretamente com acentos:
+export LANG=en_US.UTF-8
+
+# RVM:
+[[ -d "$HOME/.rvm" ]] && PATH=$PATH:$HOME/.rvm/bin
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
