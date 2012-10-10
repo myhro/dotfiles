@@ -7,5 +7,6 @@ A ideia deste repositório é simplesmente servir como ponto central para o gere
 
     git clone https://github.com/myhro/dotfiles.git .dotfiles
     ln -s .dotfiles/bashrc ~/.bashrc
+    ln -s ~/.bashrc ~/.profile
     ln -s .dotfiles/screenrc ~/.screenrc
     ln -s .dotfiles/vimrc ~/.vimrc
