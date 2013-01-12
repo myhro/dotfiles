@@ -43,6 +43,10 @@ nmap <silent> <C-C> :silent noh<CR>
 " Fonte e janela:
 set encoding=utf-8
 set wildmenu
+" Clipboard do sistema:
+if version >= 703
+    set clipboard=unnamed
+endif
 
 " Omnicomplete:
 inoremap <Nul> <C-x><C-o>
