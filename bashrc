@@ -24,6 +24,9 @@ unset HISTFILE
 # Lida corretamente com acentos:
 export LANG=en_US.UTF-8
 
+# Permite usar CTRL+S sem bloquear o terminal:
+stty -ixon
+
 # RVM:
 [[ -d "$HOME/.rvm" ]] && PATH=$PATH:$HOME/.rvm/bin
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

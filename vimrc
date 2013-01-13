@@ -9,6 +9,11 @@ set nowritebackup
 " Desabilitar o viminfo:
 set viminfo=
 
+" Clipboard do sistema:
+if version >= 703
+    set clipboard=unnamed
+endif
+
 " Cores e tema:
 filetype on
 syntax on
@@ -33,6 +38,9 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Salvar com CTRL + S:
+map <C-s> :w<CR>
+
 " Busca:
 set hlsearch
 set ignorecase
@@ -43,10 +51,6 @@ nmap <silent> <C-C> :silent noh<CR>
 " Fonte e janela:
 set encoding=utf-8
 set wildmenu
-" Clipboard do sistema:
-if version >= 703
-    set clipboard=unnamed
-endif
 
 " Omnicomplete:
 inoremap <Nul> <C-x><C-o>
