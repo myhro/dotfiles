@@ -10,9 +10,13 @@ alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 # Bash completion:
 [[ -f /etc/bash_completion ]] && source /etc/bash_completion
 
-# Cores:
 case "$TERM" in
-    xterm*) TERM=xterm-256color
+    xterm*)
+        # Permite usar CTRL+S sem bloquear o terminal:
+        stty -ixon
+        # Cores:
+        TERM=xterm-256color
+        ;;
 esac
 
 # Customização do prompt:
@@ -24,8 +28,6 @@ unset HISTFILE
 # Lida corretamente com acentos:
 export LANG=en_US.UTF-8
 
-# Permite usar CTRL+S sem bloquear o terminal:
-stty -ixon
 
 # RVM:
 [[ -d "$HOME/.rvm" ]] && PATH=$PATH:$HOME/.rvm/bin
