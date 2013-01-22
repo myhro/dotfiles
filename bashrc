@@ -12,10 +12,10 @@ alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
 case "$TERM" in
     xterm*)
+        # 256 Cores:
+        TERM=xterm-256color
         # Permite usar CTRL+S sem bloquear o terminal:
         stty -ixon
-        # Cores:
-        TERM=xterm-256color
         ;;
 esac
 
@@ -27,7 +27,6 @@ unset HISTFILE
 
 # Lida corretamente com acentos:
 export LANG=en_US.UTF-8
-
 
 # RVM:
 [[ -d "$HOME/.rvm" ]] && PATH=$PATH:$HOME/.rvm/bin
