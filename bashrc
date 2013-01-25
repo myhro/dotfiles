@@ -1,5 +1,6 @@
 # Atalhos:
 alias df='df -h'
+alias du='du -sh'
 alias free='free -m'
 alias grep='grep --color=auto'
 alias la='ls --color=auto -lha'
