@@ -40,6 +40,8 @@ map <C-l> <C-w>l
 
 " Salvar com CTRL + S:
 map <C-s> :w<CR>
+" Fechar aba com CTRL + W:
+map <C-w> :bd<CR>
 
 " Busca:
 set hlsearch
