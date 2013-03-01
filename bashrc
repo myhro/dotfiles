@@ -9,7 +9,10 @@ alias ls='ls --color=auto'
 alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
 # Bash completion:
-[[ -f /etc/bash_completion ]] && source /etc/bash_completion
+[[ -f "/etc/bash_completion" ]] && source "/etc/bash_completion"
+
+# Funções ZZ:
+[[ -f "$HOME/.zz/funcoeszz" ]] && source "$HOME/.zz/funcoeszz"
 
 # Instalações locais:
 [[ -d "$HOME/.local/bin" ]] && PATH=$PATH:$HOME/.local/bin
