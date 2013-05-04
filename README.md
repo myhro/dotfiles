@@ -5,8 +5,17 @@ A ideia deste repositório é simplesmente servir como ponto central para o gere
 
 ## Exemplo de utilização:
 
+Clonando o repositório na pasta `.dotfiles`:
+
     git clone https://github.com/myhro/dotfiles.git .dotfiles
+
+Instalando de forma manual e/ou individual:
+
     ln -s .dotfiles/bashrc ~/.bashrc
     ln -s ~/.bashrc ~/.profile
     ln -s .dotfiles/screenrc ~/.screenrc
     ln -s .dotfiles/vimrc ~/.vimrc
+
+Instalando todos de forma automática:
+
+    sh .dotfiles/install.sh
