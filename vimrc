@@ -38,6 +38,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Navegação entre abas:
+map <Tab> gt
+map <S-Tab> gT
+
 " Salvar com CTRL + S:
 map <C-s> :w<CR>
 
