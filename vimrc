@@ -73,8 +73,8 @@ inoremap <Nul> <C-x><C-o>
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-" Solarized theme configuration
-if filereadable(expand($HOME . "/.vim/colors/solarized.vim"))
+" Configurações do Solarized
+if isdirectory(expand($HOME . "/.vim/bundle/vim-colors-solarized/"))
     if has('gui_running')
         set background=light
     else
