@@ -18,4 +18,6 @@ Instalando de forma manual e/ou individual:
 
 Instalando todos de forma automática:
 
-    sh .dotfiles/install.sh
+    sh .dotfiles/install.sh [pathogen]
+
+O parâmetro opcional "pathogen" realiza também a instalação do [vim-pathogen](https://github.com/tpope/vim-pathogen).
