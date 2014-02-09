@@ -1,3 +1,8 @@
+" Pathogen
+if filereadable(expand($HOME . "/.vim/autoload/pathogen.vim"))
+    execute pathogen#infect()
+endif
+
 " Desabilitar o mouse:
 set mouse=
 
