@@ -23,7 +23,7 @@ alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 case "$TERM" in
     xterm*)
         # 256 Cores:
-        TERM=xterm-256color
+        export TERM=xterm-256color
         # Permite usar CTRL+S sem bloquear o terminal:
         stty -ixon
         ;;

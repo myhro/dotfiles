@@ -81,6 +81,6 @@ if isdirectory(expand($HOME . "/.vim/bundle/vim-colors-solarized/"))
         set background=dark
     endif
     let g:solarized_termcolors=256
-    set t_Co=16
+    set t_Co=256
     colorscheme solarized
 endif
