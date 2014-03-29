@@ -46,9 +46,6 @@ map <C-l> <C-w>l
 map <Tab> gt
 map <S-Tab> gT
 
-" Salvar com CTRL + S
-map <C-s> :w<CR>
-
 " Busca
 set hlsearch
 set ignorecase
