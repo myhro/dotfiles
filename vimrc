@@ -14,11 +14,6 @@ set nowritebackup
 " Desabilitar o viminfo
 set viminfo=
 
-" Clipboard do sistema
-if version >= 703
-    set clipboard=unnamed
-endif
-
 " Cores e tema
 filetype on
 syntax on
