@@ -5,9 +5,9 @@ A ideia deste repositório é simplesmente servir como ponto central para o gere
 
 ## Exemplo de utilização:
 
-Clonando o repositório na pasta `.dotfiles`:
+Clonando o repositório na pasta `~/.dotfiles`:
 
-    git clone https://github.com/myhro/dotfiles.git .dotfiles
+    git clone https://github.com/myhro/dotfiles.git ~/.dotfiles
 
 Instalando de forma manual e/ou individual:
 
