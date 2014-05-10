@@ -76,3 +76,11 @@ if isdirectory(expand($HOME . "/.vim/bundle/vim-colors-solarized/"))
     set t_Co=256
     colorscheme solarized
 endif
+
+" Configurações do vim-airline
+if isdirectory(expand($HOME . "/.vim/bundle/vim-airline/"))
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline_powerline_fonts = 1
+    let g:airline_theme = "powerlineish"
+    set laststatus=2
+endif
