@@ -18,6 +18,13 @@ export PS1='[\[\e[01;31m\]\u\[\e[01;36m\]@\[\e[01;34m\]\h\[\e[m\]:\[\e[01;37m\]\
 # Autoenv:
 [[ -f "$HOME/.autoenv/activate.sh" ]] && source "$HOME/.autoenv/activate.sh"
 
+# Google Cloud SDK:
+GCLOUD_SDK="$HOME/.bin/google-cloud-sdk"
+if [[ -d $GCLOUD_SDK ]]; then
+    source $GCLOUD_SDK/path.bash.inc
+    source $GCLOUD_SDK/completion.bash.inc
+fi
+
 # Heroku:
 [[ -d "$HOME/.heroku" ]] && PATH=$PATH:$HOME/.heroku/bin
 
