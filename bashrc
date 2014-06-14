@@ -9,6 +9,9 @@ alias ls='ls --color=auto'
 alias scpi='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
+# Cores dos diretórios e arquivos:
+eval `dircolors`
+
 # Customização do prompt:
 export PS1='[\[\e[01;31m\]\u\[\e[01;36m\]@\[\e[01;34m\]\h\[\e[m\]:\[\e[01;37m\]\w\[\e[m\]]\$ '
 
