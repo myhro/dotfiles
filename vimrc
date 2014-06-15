@@ -1,6 +1,19 @@
-" Pathogen
-if filereadable(expand($HOME . "/.vim/autoload/pathogen.vim"))
-    execute pathogen#infect()
+" Vundle
+if isdirectory(expand($HOME . '/.vim/bundle/Vundle.vim/'))
+    filetype off
+    set nocompatible
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+        Plugin 'gmarik/Vundle.vim'
+        " Plugins
+        Plugin 'airblade/vim-gitgutter'
+        Plugin 'bling/vim-airline'
+        Plugin 'jnwhiteh/vim-golang'
+        Plugin 'kien/ctrlp.vim'
+        Plugin 'scrooloose/syntastic'
+        " Themes
+        Plugin 'altercation/vim-colors-solarized'
+    call vundle#end()
 endif
 
 " Desabilitar o mouse
@@ -14,18 +27,15 @@ set nowritebackup
 " Desabilitar o viminfo
 set viminfo=
 
-" Cores e tema
-filetype on
-syntax on
-
 " Tabs por espaços
 set expandtab
 set shiftwidth=4
 set tabstop=4
 
-" Indentação
+" Indentação e sintaxe
 filetype plugin indent on
 set autoindent
+syntax on
 
 " Régua, quebra e número de linhas
 set linebreak
@@ -65,22 +75,23 @@ inoremap <Nul> <C-x><C-o>
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-" Configurações do Solarized
-if isdirectory(expand($HOME . "/.vim/bundle/vim-colors-solarized/"))
-    if has('gui_running')
-        set background=light
-    else
-        set background=dark
+" Configurações específicas dos plugins
+if isdirectory(expand($HOME . '/.vim/bundle/Vundle.vim/'))
+    if isdirectory(expand($HOME . '/.vim/bundle/vim-colors-solarized/'))
+        if has('gui_running')
+            set background=light
+        else
+            set background=dark
+        endif
+        let g:solarized_termcolors=256
+        set t_Co=256
+        colorscheme solarized
     endif
-    let g:solarized_termcolors=256
-    set t_Co=256
-    colorscheme solarized
-endif
 
-" Configurações do vim-airline
-if isdirectory(expand($HOME . "/.vim/bundle/vim-airline/"))
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline_powerline_fonts = 1
-    let g:airline_theme = "powerlineish"
-    set laststatus=2
+    if isdirectory(expand($HOME . '/.vim/bundle/vim-airline/'))
+        let g:airline#extensions#tabline#enabled = 1
+        let g:airline_powerline_fonts = 1
+        let g:airline_theme = 'powerlineish'
+        set laststatus=2
+    endif
 endif
