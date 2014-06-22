@@ -31,9 +31,11 @@ fi
 # Heroku:
 [[ -d "$HOME/.heroku" ]] && PATH=$PATH:$HOME/.heroku/bin
 
-# RVM:
-[[ -d "$HOME/.rvm" ]] && PATH=$PATH:$HOME/.rvm/bin
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# rbenv:
+if [[ -d "$HOME/.rbenv" ]]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
 
 # Configurações do terminal interativo:
 case "$TERM" in
