@@ -47,6 +47,10 @@ case "$TERM" in
         ;;
 esac
 
+# Vi mode:
+bind -m vi-insert "\C-l":clear-screen
+set -o vi
+
 # Lida corretamente com acentos:
 export LANG=en_US.UTF-8
 
