@@ -21,6 +21,13 @@ export PS1='[\[\e[01;31m\]\u\[\e[01;36m\]@\[\e[01;34m\]\h\[\e[m\]:\[\e[01;37m\]\
 # Autoenv:
 [[ -f "$HOME/.autoenv/activate.sh" ]] && source "$HOME/.autoenv/activate.sh"
 
+# Go:
+if [[ -d "$HOME/.go" ]]; then
+    export GOROOT="$HOME/.go"
+    export GOPATH="$GOROOT/gopath"
+    export PATH="$PATH:$GOROOT/bin"
+fi
+
 # Google Cloud SDK:
 GCLOUD_SDK="$HOME/.bin/google-cloud-sdk"
 if [[ -d $GCLOUD_SDK ]]; then
