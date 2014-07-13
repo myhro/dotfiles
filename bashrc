@@ -50,6 +50,16 @@ if [[ -d "$HOME/.rbenv" ]]; then
     eval "$(rbenv init -)"
 fi
 
+# Suporte a 256 cores:
+case "$TERM" in
+    screen*)
+        export TERM="screen-256color"
+    ;;
+    xterm*)
+        export TERM="xterm-256color"
+    ;;
+esac
+
 # Vi mode:
 bind -m vi-insert "\C-l":clear-screen
 set -o vi
