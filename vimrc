@@ -42,9 +42,8 @@ set linebreak
 set number
 set ruler
 
-" Indicadores de posição do cursor
+" Indicador de posição do cursor
 set cursorline
-set cursorcolumn
 
 " Navegação entre janelas
 map <C-h> <C-w>h
