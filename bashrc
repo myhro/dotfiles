@@ -60,6 +60,8 @@ case "$TERM" in
     ;;
 esac
 
-# Vi mode:
-bind -m vi-insert "\C-l":clear-screen
-set -o vi
+# Vi mode, se o terminal for interativo:
+if [[ $- == *i* ]]; then
+    bind -m vi-insert "\C-l":clear-screen
+    set -o vi
+fi
