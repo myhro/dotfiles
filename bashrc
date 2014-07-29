@@ -22,7 +22,7 @@ eval "$(dircolors)"
 export PS1='[\[\e[01;31m\]\u\[\e[01;36m\]@\[\e[01;34m\]\h\[\e[m\]:\[\e[01;37m\]\w\[\e[m\]]\$ '
 
 # Desabilita o histórico:
-unset HISTFILE
+[[ -f "$HOME/.no_history" ]] && unset HISTFILE
 
 # Go:
 if [[ -d "$HOME/.go" ]]; then
