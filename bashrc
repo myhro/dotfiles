@@ -8,6 +8,7 @@ alias ll='ls --color=auto -lh'
 alias ls='ls --color=auto'
 alias scpi='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+alias xclip='xclip -sel clip'
 
 # Autoenv:
 [[ -f "$HOME/.autoenv/activate.sh" ]] && source "$HOME/.autoenv/activate.sh"
