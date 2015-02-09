@@ -10,9 +10,6 @@ alias scpi='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias xclip='xclip -sel clip'
 
-# Autoenv:
-[[ -f "$HOME/.autoenv/activate.sh" ]] && source "$HOME/.autoenv/activate.sh"
-
 # Bash completion:
 [[ -f "/etc/bash_completion" ]] && source "/etc/bash_completion"
 
