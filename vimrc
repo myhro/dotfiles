@@ -45,6 +45,10 @@ set ruler
 " Indicador de posição do cursor
 set cursorline
 
+" Exibição de caracteres invisíveis
+map <silent> <C-m> :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
+
 " Navegação entre janelas
 map <C-h> <C-w>h
 map <C-j> <C-w>j
