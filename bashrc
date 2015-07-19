@@ -58,6 +58,9 @@ case "$TERM" in
     ;;
 esac
 
+# Timezone padrão:
+export TZ="America/Sao_Paulo"
+
 # Vi mode, se o terminal for interativo:
 if [[ $- == *i* ]]; then
     bind -m vi-insert "\C-l":clear-screen

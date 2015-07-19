@@ -1,5 +1,4 @@
 # Aumenta buffer para facilitar visualização posterior:
-
 defscrollback 10000
 
 # Carregar bashrc/profile:
