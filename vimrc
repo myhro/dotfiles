@@ -10,6 +10,7 @@ if isdirectory(expand($HOME . '/.vim/bundle/Vundle.vim/'))
         Plugin 'bling/vim-airline'
         Plugin 'fatih/vim-go'
         Plugin 'kien/ctrlp.vim'
+        Plugin 'mattn/emmet-vim'
         Plugin 'scrooloose/syntastic'
         " Themes
         Plugin 'altercation/vim-colors-solarized'
