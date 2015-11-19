@@ -11,6 +11,7 @@ if isdirectory(expand($HOME . '/.vim/bundle/Vundle.vim/'))
         Plugin 'fatih/vim-go'
         Plugin 'kien/ctrlp.vim'
         Plugin 'mattn/emmet-vim'
+        Plugin 'plasticboy/vim-markdown'
         Plugin 'scrooloose/syntastic'
         " Themes
         Plugin 'altercation/vim-colors-solarized'
@@ -97,5 +98,9 @@ if isdirectory(expand($HOME . '/.vim/bundle/Vundle.vim/'))
         let g:airline_powerline_fonts = 1
         let g:airline_theme = 'powerlineish'
         set laststatus=2
+    endif
+
+    if isdirectory(expand($HOME . '/.vim/bundle/vim-markdown/'))
+        let g:vim_markdown_folding_disabled=1
     endif
 endif
