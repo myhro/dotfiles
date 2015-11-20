@@ -4,7 +4,7 @@ if isdirectory(expand($HOME . '/.vim/bundle/Vundle.vim/'))
     set nocompatible
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
-        Plugin 'gmarik/Vundle.vim'
+        Plugin 'VundleVim/Vundle.vim'
         " Plugins
         Plugin 'airblade/vim-gitgutter'
         Plugin 'bling/vim-airline'
