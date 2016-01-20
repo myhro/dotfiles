@@ -42,6 +42,11 @@ fi
 # Lida corretamente com acentos:
 export LANG="en_US.UTF-8"
 
+# Prompt resumido, para fins de demonstração:
+function short_prompt {
+    export PS1='\e[01;37m\]\$\e[m\] '
+}
+
 # rbenv:
 if [[ -d "$HOME/.rbenv" ]]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
