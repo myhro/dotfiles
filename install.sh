@@ -1,9 +1,9 @@
 #!/bin/sh
 
 if [ -d .dotfiles ]; then
-    ln -fs .dotfiles/bashrc ~/.bashrc
-    ln -fs .dotfiles/screenrc ~/.screenrc
-    ln -fs .dotfiles/vimrc ~/.vimrc
+    for f in bashrc gemrc screenrc vimrc; do
+        ln -fs .dotfiles/$f ~/.$f
+    done
     ln -fs ~/.bashrc ~/.profile
     if [ "$1" = "vundle" ]; then
         mkdir -p ~/.vim/bundle/Vundle.vim
