@@ -19,8 +19,14 @@ eval "$(dircolors)"
 # Customização do prompt:
 export PS1='[\[\e[01;31m\]\u\[\e[01;36m\]@\[\e[01;34m\]\h\[\e[m\]:\[\e[01;37m\]\w\[\e[m\]]\$ '
 
-# Desabilita o histórico:
-[[ -f "$HOME/.no_history" ]] && unset HISTFILE
+if [[ -f "$HOME/.no_history" ]]; then
+    # Desabilita o histórico:
+    unset HISTFILE
+else
+    # Ou ignora entradas duplicadas, aumentando seu tamanho:
+    export HISTCONTROL="ignoreboth:erasedups"
+    export HISTSIZE=10000
+fi
 
 # Go:
 if [[ -d "$HOME/.go" ]]; then
