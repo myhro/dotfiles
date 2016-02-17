@@ -15,6 +15,7 @@ if isdirectory(expand($HOME . '/.vim/bundle/Vundle.vim/'))
         Plugin 'scrooloose/syntastic'
         " Themes
         Plugin 'altercation/vim-colors-solarized'
+        Plugin 'vim-airline/vim-airline-themes'
     call vundle#end()
 endif
 
