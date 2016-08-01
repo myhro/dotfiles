@@ -1,3 +1,9 @@
+# coreutils do Homebrew
+if [[ -d "/usr/local/opt/coreutils/libexec/" ]]; then
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+fi
+
 # Atalhos:
 alias df='df -h'
 alias du='du -sh'
