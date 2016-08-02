@@ -1,7 +1,14 @@
+# Prefixo do Homebrew
+if $(hash brew 2> /dev/null); then
+    BREW_PREFIX="$(brew --prefix)"
+else
+    BREW_PREFIX=""
+fi
+
 # coreutils do Homebrew
-if [[ -d "/usr/local/opt/coreutils/libexec/" ]]; then
-    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+if [[ -d "${BREW_PREFIX}/opt/coreutils/libexec/" ]]; then
+    export PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
+    export MANPATH="${BREW_PREFIX}/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
 # Atalhos:
