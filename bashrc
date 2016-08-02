@@ -24,7 +24,12 @@ alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias xclip='xclip -sel clip'
 
 # Bash completion:
-[[ -f "/etc/bash_completion" ]] && source "/etc/bash_completion"
+for bc in "/etc/bash_completion" "${BREW_PREFIX}/etc/bash_completion"; do
+    if [[ -f $bc ]]; then
+        . $bc
+        break
+    fi
+done
 
 # Cores dos diretórios e arquivos:
 eval "$(dircolors)"
