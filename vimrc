@@ -39,6 +39,8 @@ set tabstop=4
 filetype plugin indent on
 set autoindent
 syntax on
+" Por tipo de arquivo
+au FileType yaml setl sw=2 ts=2 et
 
 " Régua, quebra e número de linhas
 set linebreak
