@@ -91,3 +91,8 @@ if [[ $- == *i* ]]; then
     bind -m vi-insert "\C-l":clear-screen
     set -o vi
 fi
+
+# Virtualenvwrapper:
+
+VENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
+[[ -f $VENVWRAPPER ]] && source $VENVWRAPPER
