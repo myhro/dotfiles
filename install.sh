@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -d .dotfiles ]; then
-    for f in bashrc gemrc screenrc vimrc; do
+    for f in bashrc gemrc screenrc tmux.conf vimrc; do
         ln -fs .dotfiles/$f ~/.$f
     done
     ln -fs ~/.bashrc ~/.profile
