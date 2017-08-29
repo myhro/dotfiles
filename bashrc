@@ -95,4 +95,7 @@ fi
 # Virtualenvwrapper:
 
 VENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
-[[ -f $VENVWRAPPER ]] && source $VENVWRAPPER
+if [[ -f $VENVWRAPPER ]]; then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
+    source $VENVWRAPPER
+fi
