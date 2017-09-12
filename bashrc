@@ -51,23 +51,6 @@ else
     export HISTSIZE=10000
 fi
 
-# Go:
-if [[ -d "$HOME/.go" ]]; then
-    export GOROOT="$HOME/.go"
-    export GOPATH="$GOROOT/gopath"
-    export PATH="$PATH:$GOROOT/bin"
-fi
-
-# Google Cloud SDK:
-GCLOUD_SDK="$HOME/.bin/google-cloud-sdk"
-if [[ -d $GCLOUD_SDK ]]; then
-    source "$GCLOUD_SDK/path.bash.inc"
-    source "$GCLOUD_SDK/completion.bash.inc"
-fi
-
-# Heroku:
-[[ -d "$HOME/.heroku" ]] && PATH="$PATH:$HOME/.heroku/bin"
-
 # Lida corretamente com acentos:
 export LANG="en_US.UTF-8"
 
