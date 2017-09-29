@@ -50,6 +50,11 @@ function short_prompt {
     export PS1='\e[01;37m\]\$\e[m\] '
 }
 
+if [[ -d "$HOME/.pyenv" ]]; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
 if [[ -d "$HOME/.rbenv" ]]; then
     eval "$(rbenv init -)"
 fi
