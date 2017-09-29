@@ -69,9 +69,3 @@ if [[ $- == *i* ]]; then
     set -o vi
 fi
 
-# macOS Virtualenvwrapper:
-VENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
-if [[ -f $VENVWRAPPER ]]; then
-    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
-    source $VENVWRAPPER
-fi
