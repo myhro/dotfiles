@@ -51,6 +51,7 @@ function short_prompt {
 }
 
 if [[ -d "$HOME/.pyenv" ]]; then
+    export PATH="~/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
@@ -73,4 +74,3 @@ if [[ $- == *i* ]]; then
     bind -m vi-insert "\C-l":clear-screen
     set -o vi
 fi
-
