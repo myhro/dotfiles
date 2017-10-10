@@ -1,4 +1,6 @@
-if $(hash brew 2> /dev/null); then
+#!/bin/bash
+
+if hash brew 2> /dev/null; then
     BREW_PREFIX="$(brew --prefix)"
 else
     BREW_PREFIX=""
@@ -21,8 +23,9 @@ alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias xclip='xclip -sel clip'
 
 for bc in "/etc/bash_completion" "${BREW_PREFIX}/etc/bash_completion"; do
-    if [[ -f $bc ]]; then
-        . $bc
+    if [[ -f "$bc" ]]; then
+        # shellcheck source=/dev/null
+        . "$bc"
         break
     fi
 done
@@ -47,11 +50,11 @@ export LANG="en_US.UTF-8"
 
 # Short prompt for presentations:
 function short_prompt {
-    export PS1='\e[01;37m\]\$\e[m\] '
+    export PS1='\[\e[01;37m\]\$\e[m\] '
 }
 
 if [[ -d "$HOME/.pyenv" ]]; then
-    export PATH="~/.pyenv/bin:$PATH"
+    export PATH="${HOME}/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
