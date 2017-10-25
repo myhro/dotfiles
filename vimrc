@@ -97,6 +97,12 @@ if isdirectory(expand($HOME . '/.vim/bundle/Vundle.vim/'))
         colorscheme solarized
     endif
 
+    if isdirectory(expand($HOME . '/.vim/bundle/ctrlp.vim/'))
+        if executable('ag')
+            let g:ctrlp_user_command = 'ag %s -g ""'
+        endif
+    endif
+
     if isdirectory(expand($HOME . '/.vim/bundle/vim-airline/'))
         let g:airline#extensions#tabline#enabled = 1
         let g:airline_powerline_fonts = 1
