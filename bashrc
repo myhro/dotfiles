@@ -77,3 +77,15 @@ if [[ $- == *i* ]]; then
     bind -m vi-insert "\C-l":clear-screen
     set -o vi
 fi
+
+# fzf should be configured after vi mode:
+if [[ -f ~/.fzf.bash ]]; then
+    # shellcheck source=/dev/null
+    source ~/.fzf.bash
+    if hash ag 2> /dev/null; then
+        export FZF_DEFAULT_COMMAND='ag -g ""'
+        export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    fi
+    export FZF_DEFAULT_OPTS="--height 100%"
+    export FZF_CTRL_T_OPTS="--preview 'head -100 {}'"
+fi
