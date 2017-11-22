@@ -54,7 +54,7 @@ function short_prompt {
 }
 
 if [[ -d "$HOME/.pyenv" ]]; then
-    export PATH="${HOME}/.pyenv/bin:$PATH"
+    export PATH="$HOME/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
@@ -79,9 +79,9 @@ if [[ $- == *i* ]]; then
 fi
 
 # fzf should be configured after vi mode:
-if [[ -f ~/.fzf.bash ]]; then
+if [[ -f "$HOME/.fzf.bash" ]]; then
     # shellcheck source=/dev/null
-    source ~/.fzf.bash
+    source "$HOME/.fzf.bash"
     if hash ag 2> /dev/null; then
         export FZF_DEFAULT_COMMAND='ag -g ""'
         export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
