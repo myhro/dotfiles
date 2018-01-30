@@ -63,6 +63,12 @@ if [[ -d "$HOME/.rbenv" ]]; then
     eval "$(rbenv init -)"
 fi
 
+# Fix SSH_AUTH_SOCK for screen sessions
+if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
+    ln -fs "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
+fi
+export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
+
 case "$TERM" in
     screen*)
         export TERM="screen-256color"
