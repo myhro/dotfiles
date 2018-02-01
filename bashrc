@@ -37,7 +37,7 @@ if [[ -f /etc/redhat-release ]]; then
 else
     PS1_SEP=":"
 fi
-export PS1="[\[\e[01;31m\]\u\[\e[01;36m\]@\[\e[01;34m\]\h\[\e[m\]${PS1_SEP}\[\e[01;37m\]\w\[\e[m\]]\$ "
+export PS1='[\[\e[01;31m\]\u\[\e[01;36m\]@\[\e[01;34m\]\h\[\e[m\]${PS1_SEP}\[\e[01;37m\]\w\[\e[m\]]\$ '
 
 if [[ -f "$HOME/.no_history" ]]; then
     unset HISTFILE
@@ -80,7 +80,7 @@ esac
 
 # Vi mode for interactive terminal:
 if [[ $- == *i* ]]; then
-    bind -m vi-insert "\C-l":clear-screen
+    bind -m vi-insert '\C-l':clear-screen
     set -o vi
 fi
 
