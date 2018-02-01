@@ -32,6 +32,11 @@ done
 
 eval "$(dircolors)"
 
+if hash vim 2> /dev/null; then
+    EDITOR=$(which vim)
+    export EDITOR
+fi
+
 if [[ -f /etc/redhat-release ]]; then
     PS1_SEP=" "
 else
