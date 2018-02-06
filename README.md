@@ -1,23 +1,23 @@
 dotfiles
 ========
 
-A ideia deste repositório é simplesmente servir como ponto central para o gerenciamento dos arquivos básicos de configuração utilizados para facilitar o uso corriqueiro do terminal. Para utilizá-los, basta clonar o repositório e linkar os arquivos desejados.
+This repository serves as a central point to store configuration files to make the daily terminal usage more comfortable. In order to use them, clone this repository and link the desired files to your home folder.
 
-## Exemplo de utilização:
+## Usage
 
-Clonando o repositório na pasta `~/.dotfiles`:
+Cloning the repository on the `~/.dotfiles` directory:
 
     git clone https://github.com/myhro/dotfiles.git ~/.dotfiles
 
-Instalando de forma manual e/ou individual:
+Installing each configuration file individually:
 
     ln -s .dotfiles/bashrc ~/.bashrc
     ln -s ~/.bashrc ~/.profile
     ln -s .dotfiles/screenrc ~/.screenrc
     ln -s .dotfiles/vimrc ~/.vimrc
 
-Instalando todos de forma automática:
+Installing everything:
 
-    sh .dotfiles/install.sh [vundle]
+    bash .dotfiles/install.sh [vundle]
 
-O parâmetro opcional "vundle" realiza também a instalação do [Vundle](https://github.com/VundleVim/Vundle.vim).
+The optional parameter `vundle` installs [Vundle](https://github.com/VundleVim/Vundle.vim), a Vim plugin manager. The plugins listed on `~/.vimrc` can then be installed using `:PluginInstall` under Vim.
