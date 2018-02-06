@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ -d .dotfiles ]; then
     for f in bashrc gemrc screenrc vimrc; do
