@@ -94,6 +94,8 @@ if isdirectory(expand($HOME . '/.vim/bundle/Vundle.vim/'))
         let g:solarized_termcolors=256
         set t_Co=256
         colorscheme solarized
+        " Fix spell checker highlighting
+        hi SpellBad cterm=underline
     endif
 
     if isdirectory(expand($HOME . '/.vim/bundle/ctrlp.vim/'))
