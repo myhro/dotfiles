@@ -42,6 +42,7 @@ filetype plugin indent on
 set autoindent
 syntax on
 " Indentation settings per file type
+au FileType json setl sw=2 ts=2 et
 au FileType yaml setl sw=2 ts=2 et
 
 " Viewing options, like cursor position and number of lines
