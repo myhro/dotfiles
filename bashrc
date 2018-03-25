@@ -58,6 +58,12 @@ function short_prompt {
     export PS1='\[\e[01;37m\]\$\e[m\] '
 }
 
+if [[ -d "$HOME/go" ]]; then
+    export GOPATH="$HOME/go"
+    export GOBIN="$GOPATH/bin"
+    export PATH="$GOBIN:$PATH"
+fi
+
 if [[ -d "$HOME/.pyenv" ]]; then
     export PATH="$HOME/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
