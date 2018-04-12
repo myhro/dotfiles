@@ -53,6 +53,9 @@ set number
 set ruler
 set wildmenu
 
+" Fix ESC delay
+set timeoutlen=0
+
 " Toggle hidden characters
 map <silent> <C-m> :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
