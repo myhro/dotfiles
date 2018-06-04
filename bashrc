@@ -64,6 +64,10 @@ if [[ -d "$HOME/go" ]]; then
     export PATH="$GOBIN:$PATH"
 fi
 
+if [[ -d "$HOME/.nodenv" ]]; then
+    eval "$(nodenv init -)"
+fi
+
 if [[ -d "$HOME/.pyenv" ]]; then
     export PATH="$HOME/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
