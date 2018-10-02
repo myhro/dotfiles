@@ -75,6 +75,7 @@ map <S-Tab> gT
 set hlsearch
 set ignorecase
 set incsearch
+set smartcase
 
 " Clear search results highlights
 nmap <silent> <C-C> :silent noh<CR>
