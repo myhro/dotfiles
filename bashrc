@@ -33,7 +33,7 @@ done
 eval "$(dircolors)"
 
 if hash vim 2> /dev/null; then
-    EDITOR=$(which vim)
+    EDITOR=$(command -v vim)
     export EDITOR
 fi
 
