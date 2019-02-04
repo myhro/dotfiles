@@ -8,6 +8,7 @@ if isdirectory(expand($HOME . '/.vim/bundle/Vundle.vim/'))
         " Plugins
         Plugin 'airblade/vim-gitgutter'
         Plugin 'bling/vim-airline'
+        Plugin 'elmcast/elm-vim'
         Plugin 'fatih/vim-go'
         Plugin 'kien/ctrlp.vim'
         Plugin 'mattn/emmet-vim'
@@ -42,6 +43,7 @@ filetype plugin indent on
 set autoindent
 syntax on
 " Indentation settings per file type
+au FileType elm setl sw=2 ts=2 et
 au FileType html setl sw=2 ts=2 et
 au FileType javascript setl sw=2 ts=2 et
 au FileType json setl sw=2 ts=2 et
