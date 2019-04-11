@@ -1,25 +1,23 @@
-" Vundle
-if isdirectory(expand($HOME . '/.vim/bundle/Vundle.vim/'))
-    filetype off
-    set nocompatible
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
-        Plugin 'VundleVim/Vundle.vim'
+" vim-plug
+let vim_plug = expand($HOME . '/.vim/plug.vim')
+if filereadable(vim_plug)
+    execute('source ' . vim_plug)
+    call plug#begin('~/.vim/plugged')
         " Plugins
-        Plugin 'airblade/vim-gitgutter'
-        Plugin 'bling/vim-airline'
-        Plugin 'elmcast/elm-vim'
-        Plugin 'fatih/vim-go'
-        Plugin 'kien/ctrlp.vim'
-        Plugin 'mattn/emmet-vim'
-        Plugin 'plasticboy/vim-markdown'
-        Plugin 'tpope/vim-commentary'
-        Plugin 'tpope/vim-eunuch'
-        Plugin 'w0rp/ale'
+        Plug 'airblade/vim-gitgutter'
+        Plug 'bling/vim-airline'
+        Plug 'elmcast/elm-vim'
+        Plug 'fatih/vim-go'
+        Plug 'kien/ctrlp.vim'
+        Plug 'mattn/emmet-vim'
+        Plug 'plasticboy/vim-markdown'
+        Plug 'tpope/vim-commentary'
+        Plug 'tpope/vim-eunuch'
+        Plug 'w0rp/ale'
         " Themes
-        Plugin 'altercation/vim-colors-solarized'
-        Plugin 'vim-airline/vim-airline-themes'
-    call vundle#end()
+        Plug 'altercation/vim-colors-solarized'
+        Plug 'vim-airline/vim-airline-themes'
+    call plug#end()
 endif
 
 " Disable mouse
@@ -93,8 +91,8 @@ autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Settings per plugin/theme
-if isdirectory(expand($HOME . '/.vim/bundle/Vundle.vim/'))
-    if isdirectory(expand($HOME . '/.vim/bundle/vim-colors-solarized/'))
+if isdirectory(expand($HOME . '/.vim/plugged/'))
+    if isdirectory(expand($HOME . '/.vim/plugged/vim-colors-solarized/'))
         if has('gui_running')
             set background=light
         else
@@ -107,20 +105,20 @@ if isdirectory(expand($HOME . '/.vim/bundle/Vundle.vim/'))
         hi SpellBad cterm=underline
     endif
 
-    if isdirectory(expand($HOME . '/.vim/bundle/ctrlp.vim/'))
+    if isdirectory(expand($HOME . '/.vim/plugged/ctrlp.vim/'))
         if executable('ag')
             let g:ctrlp_user_command = 'ag %s -g ""'
         endif
     endif
 
-    if isdirectory(expand($HOME . '/.vim/bundle/vim-airline/'))
+    if isdirectory(expand($HOME . '/.vim/plugged/vim-airline/'))
         let g:airline#extensions#tabline#enabled = 1
         let g:airline_powerline_fonts = 1
         let g:airline_theme = 'powerlineish'
         set laststatus=2
     endif
 
-    if isdirectory(expand($HOME . '/.vim/bundle/vim-markdown/'))
+    if isdirectory(expand($HOME . '/.vim/plugged/vim-markdown/'))
         let g:vim_markdown_folding_disabled=1
     endif
 endif

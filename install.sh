@@ -6,8 +6,8 @@ if [ -d .dotfiles ]; then
     done
     ln -fs ~/.bashrc ~/.profile
     [ "$(uname -s)" = "Darwin" ] && ln -fs .dotfiles/tmux.conf .tmux.conf
-    if [ "$1" = "vundle" ]; then
-        mkdir -p ~/.vim/bundle/Vundle.vim
-        git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    if [ "$1" = "plug" ]; then
+        mkdir -p ~/.vim/
+        curl -o ~/.vim/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     fi
 fi
