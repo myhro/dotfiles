@@ -7,7 +7,7 @@ if filereadable(vim_plug)
         Plug 'airblade/vim-gitgutter'
         Plug 'bling/vim-airline'
         Plug 'elmcast/elm-vim'
-        Plug 'fatih/vim-go'
+        Plug 'fatih/vim-go', {'branch': 'v1.19'}
         Plug 'kien/ctrlp.vim'
         Plug 'mattn/emmet-vim'
         Plug 'plasticboy/vim-markdown'
