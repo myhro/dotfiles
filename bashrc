@@ -70,24 +70,17 @@ fi
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
+if [[ -d "$HOME/.asdf" ]]; then
+    # shellcheck source=/dev/null
+    source "$HOME/.asdf/asdf.sh"
+    # shellcheck source=/dev/null
+    source "$HOME/.asdf/completions/asdf.bash"
+fi
+
 if [[ -d "$HOME/go" ]]; then
     export GOPATH="$HOME/go"
     export GOBIN="$GOPATH/bin"
     export PATH="$GOBIN:$PATH"
-fi
-
-if [[ -d "$HOME/.nodenv" ]]; then
-    eval "$(nodenv init -)"
-fi
-
-if [[ -d "$HOME/.pyenv" ]]; then
-    export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
-
-if [[ -d "$HOME/.rbenv" ]]; then
-    eval "$(rbenv init -)"
 fi
 
 # Fix SSH_AUTH_SOCK for screen sessions
