@@ -18,6 +18,8 @@ Installing each configuration file individually:
 
 Installing everything:
 
-    bash .dotfiles/install.sh [vundle]
+    bash .dotfiles/install.sh [plug]
 
-The optional parameter `vundle` installs [Vundle](https://github.com/VundleVim/Vundle.vim), a Vim plugin manager. The plugins listed on `~/.vimrc` can then be installed using `:PluginInstall` under Vim.
+The optional parameter `plug` installs [vim-plug][vim-plug], a Vim plugin manager. The plugins listed on `~/.vimrc` can then be installed using `:PluginInstall` under Vim.
+
+[vim-plug]: https://github.com/junegunn/vim-plug
