@@ -20,6 +20,7 @@ alias kg='kill $(jobs -p)'
 alias la='ls --color=auto -lha'
 alias ll='ls --color=auto -lh'
 alias ls='ls --color=auto'
+alias npmx='PATH=$(npm bin):$PATH' "$@"
 alias scpi='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias shh='$(fc -ln -1) > /dev/null 2>&1'
 alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
