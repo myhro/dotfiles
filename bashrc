@@ -24,6 +24,7 @@ alias npmx='PATH=$(npm bin):$PATH' "$@"
 alias scpi='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias shh='$(fc -ln -1) > /dev/null 2>&1'
 alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+alias tree="tree -I 'node_modules|vendor'"
 alias xclip='xclip -sel clip'
 
 for bc in "/etc/bash_completion" "${BREW_PREFIX}/etc/bash_completion"; do
