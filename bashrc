@@ -27,7 +27,7 @@ alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias tree="tree -I 'node_modules|vendor'"
 alias xclip='xclip -sel clip'
 
-for bc in "/etc/bash_completion" "${BREW_PREFIX}/etc/bash_completion"; do
+for bc in "/etc/bash_completion" "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"; do
     if [[ -f "$bc" ]]; then
         # shellcheck source=/dev/null
         . "$bc"
