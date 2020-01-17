@@ -85,6 +85,9 @@ if [[ -d "$HOME/go" ]]; then
     export PATH="$GOBIN:$PATH"
 fi
 
+# Get rid of 'SyntaxWarning: "is" with a literal. Did you mean "=="?'
+export PYTHONWARNINGS="ignore"
+
 # Fix SSH_AUTH_SOCK for screen sessions
 if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
     ln -fs "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
