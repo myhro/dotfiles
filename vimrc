@@ -33,19 +33,16 @@ set viminfo=
 
 " Replace tabs for spaces
 set expandtab
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 
 " Indentation and syntax
 filetype plugin indent on
 set autoindent
 syntax on
 " Indentation settings per file type
-au FileType elm setl sw=2 ts=2 et
-au FileType html setl sw=2 ts=2 et
-au FileType javascript setl sw=2 ts=2 et
-au FileType json setl sw=2 ts=2 et
-au FileType yaml setl sw=2 ts=2 et
+au FileType go setl noet sw=4 ts=4
+au FileType python setl et sw=4 ts=4
 
 " Viewing options, like cursor position and number of lines
 set cursorline
