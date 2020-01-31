@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# shellcheck disable=SC1090
+
 if hash brew 2> /dev/null; then
     BREW_PREFIX="$(brew --prefix)"
 else
@@ -29,7 +31,6 @@ alias xclip='xclip -sel clip'
 
 for bc in "/etc/bash_completion" "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"; do
     if [[ -f "$bc" ]]; then
-        # shellcheck source=/dev/null
         . "$bc"
         break
     fi
@@ -73,10 +74,13 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 if [[ -d "$HOME/.asdf" ]]; then
-    # shellcheck source=/dev/null
     source "$HOME/.asdf/asdf.sh"
-    # shellcheck source=/dev/null
     source "$HOME/.asdf/completions/asdf.bash"
+fi
+
+if [[ -d "$HOME/.google-cloud-sdk" ]]; then
+  source "$HOME/.google-cloud-sdk/path.bash.inc"
+  source "$HOME/.google-cloud-sdk/completion.bash.inc"
 fi
 
 if [[ -d "$HOME/go" ]]; then
@@ -108,7 +112,6 @@ fi
 
 # fzf should be configured after vi mode:
 if [[ -f "$HOME/.fzf.bash" ]]; then
-    # shellcheck source=/dev/null
     source "$HOME/.fzf.bash"
     if hash ag 2> /dev/null; then
         export FZF_DEFAULT_COMMAND='ag -g ""'
