@@ -6,6 +6,7 @@ if filereadable(vim_plug)
         " Plugins
         Plug 'airblade/vim-gitgutter'
         Plug 'bling/vim-airline'
+        Plug 'cespare/vim-toml'
         Plug 'elmcast/elm-vim'
         Plug 'fatih/vim-go', {'branch': 'v1.19'}
         Plug 'kien/ctrlp.vim'
