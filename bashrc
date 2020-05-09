@@ -16,6 +16,7 @@ fi
 alias df='df -h'
 alias du='du -sh'
 alias free='free -m'
+alias git-sh='source $HOME/.bash-git-prompt/gitprompt.sh'
 alias grep='grep --color=auto'
 alias httpi='http --verify=no'
 alias kg='kill $(jobs -p)'
