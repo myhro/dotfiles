@@ -84,6 +84,11 @@ if [[ -d "$HOME/.google-cloud-sdk" ]]; then
   source "$HOME/.google-cloud-sdk/completion.bash.inc"
 fi
 
+if [[ -d "$HOME/.nix-profile" ]]; then
+  source "$HOME/.nix-profile/etc/profile.d/nix.sh"
+  [ "$(uname -s)" = "Linux" ] && export LOCALE_ARCHIVE="/usr/lib/locale/locale-archive"
+fi
+
 if [[ -d "$HOME/go" ]]; then
     export GOPATH="$HOME/go"
     export GOBIN="$GOPATH/bin"
