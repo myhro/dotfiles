@@ -1,9 +1,8 @@
-defscrollback 10000
+defscrollback 100000
+startup_message off
 
 # Ensure bashrc/profile loading:
 shell -$SHELL
-
-startup_message off
 
 # 256-color terminal:
 attrcolor b ".I"
