@@ -1,16 +1,21 @@
 #!/bin/bash
 
-# shellcheck disable=SC1090
+# shellcheck disable=SC1090,SC1091
 
-if hash brew 2> /dev/null; then
-    BREW_PREFIX="$(brew --prefix)"
-else
-    BREW_PREFIX=""
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+HOMEBREW_BIN="/usr/local/bin/brew"
+if [ "$(uname -m)" == "arm64" ]; then
+  HOMEBREW_BIN="/opt/homebrew/bin/brew"
 fi
 
-if [[ -d "${BREW_PREFIX}/opt/coreutils/libexec/" ]]; then
-    export PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
-    export MANPATH="${BREW_PREFIX}/opt/coreutils/libexec/gnuman:$MANPATH"
+if hash $HOMEBREW_BIN 2> /dev/null; then
+  eval "$($HOMEBREW_BIN shellenv)"
+fi
+
+if [[ -d "${HOMEBREW_PREFIX}/opt/coreutils/libexec/" ]]; then
+    export PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
+    export MANPATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
 alias df='df -h'
@@ -30,7 +35,7 @@ alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias tree="tree -I 'node_modules|vendor'"
 alias xclip='xclip -sel clip'
 
-for bc in "/etc/bash_completion" "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"; do
+for bc in "/etc/bash_completion" "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"; do
     if [[ -f "$bc" ]]; then
         . "$bc"
         break
