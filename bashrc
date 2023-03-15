@@ -9,7 +9,7 @@ if [ "$(uname -m)" == "arm64" ]; then
   HOMEBREW_BIN="/opt/homebrew/bin/brew"
 fi
 
-if hash $HOMEBREW_BIN 2> /dev/null; then
+if [ -x $HOMEBREW_BIN ]; then
   eval "$($HOMEBREW_BIN shellenv)"
 fi
 
