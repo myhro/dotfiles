@@ -104,6 +104,11 @@ if [[ -d "$HOME/go" ]]; then
     export PATH="$GOBIN:$PATH"
 fi
 
+if [[ -d "/snap/bin" ]]; then
+  export PATH="/snap/bin:$PATH"
+fi
+
+
 # Fix SSH_AUTH_SOCK for screen sessions
 if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
     ln -fs "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
