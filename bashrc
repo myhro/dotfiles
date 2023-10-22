@@ -98,16 +98,14 @@ if [[ -d "$HOME/.nix-profile" ]]; then
   [ "$(uname -s)" = "Linux" ] && export LOCALE_ARCHIVE="/usr/lib/locale/locale-archive"
 fi
 
-if [[ -d "$HOME/go" ]]; then
-    export GOPATH="$HOME/go"
-    export GOBIN="$GOPATH/bin"
-    export PATH="$GOBIN:$PATH"
+if hash go 2> /dev/null; then
+  GOBIN=$(go env GOPATH)/bin
+  export PATH="$GOBIN:$PATH"
 fi
 
 if [[ -d "/snap/bin" ]]; then
   export PATH="/snap/bin:$PATH"
 fi
-
 
 # Fix SSH_AUTH_SOCK for screen sessions
 if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
