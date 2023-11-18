@@ -86,6 +86,7 @@ export BAT_THEME="Monokai Extended"
 if [[ -d "$HOME/.asdf" ]]; then
     source "$HOME/.asdf/asdf.sh"
     source "$HOME/.asdf/completions/asdf.bash"
+    export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 fi
 
 if [[ -d "$HOME/.google-cloud-sdk" ]]; then
