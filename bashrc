@@ -2,7 +2,7 @@
 
 # shellcheck disable=SC1090,SC1091
 
-export PATH="${HOME}/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="${HOME}/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 HOMEBREW_BIN="/usr/local/bin/brew"
 if [ "$(uname -m)" == "arm64" ]; then
