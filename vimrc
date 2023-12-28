@@ -5,16 +5,11 @@ if filereadable(vim_plug)
     call plug#begin('~/.vim/plugged')
         " Plugins
         Plug 'airblade/vim-gitgutter'
-        Plug 'bling/vim-airline'
-        Plug 'cespare/vim-toml'
-        Plug 'elmcast/elm-vim'
-        Plug 'fatih/vim-go', {'branch': 'v1.19'}
+        Plug 'dense-analysis/ale'
         Plug 'kien/ctrlp.vim'
-        Plug 'mattn/emmet-vim'
-        Plug 'plasticboy/vim-markdown'
         Plug 'tpope/vim-commentary'
         Plug 'tpope/vim-eunuch'
-        Plug 'w0rp/ale'
+        Plug 'vim-airline/vim-airline'
         " Themes
         Plug 'altercation/vim-colors-solarized'
         Plug 'vim-airline/vim-airline-themes'
@@ -114,9 +109,5 @@ if isdirectory(expand($HOME . '/.vim/plugged/'))
         let g:airline_powerline_fonts = 1
         let g:airline_theme = 'powerlineish'
         set laststatus=2
-    endif
-
-    if isdirectory(expand($HOME . '/.vim/plugged/vim-markdown/'))
-        let g:vim_markdown_folding_disabled=1
     endif
 endif
