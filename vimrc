@@ -37,6 +37,7 @@ filetype plugin indent on
 set autoindent
 syntax on
 " Indentation settings per file type
+au FileType c setl et sw=4 ts=4
 au FileType go setl noet sw=4 ts=4
 au FileType python setl et sw=4 ts=4
 
