@@ -6,6 +6,7 @@ if filereadable(vim_plug)
         " Plugins
         Plug 'airblade/vim-gitgutter'
         Plug 'dense-analysis/ale'
+        Plug 'editorconfig/editorconfig-vim'
         Plug 'kien/ctrlp.vim'
         Plug 'tpope/vim-commentary'
         Plug 'tpope/vim-eunuch'
