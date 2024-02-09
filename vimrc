@@ -100,6 +100,11 @@ if isdirectory(expand($HOME . '/.vim/plugged/'))
         hi SpellBad cterm=underline
     endif
 
+    if isdirectory(expand($HOME . '/.vim/plugged/ale/'))
+        let g:ale_linters = {}
+        call extend(g:ale_linters, {'c': []})
+    endif
+
     if isdirectory(expand($HOME . '/.vim/plugged/ctrlp.vim/'))
         if executable('ag')
             let g:ctrlp_user_command = 'ag %s -g ""'
