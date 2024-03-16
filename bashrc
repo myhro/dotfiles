@@ -94,9 +94,9 @@ if [[ -d "$HOME/.google-cloud-sdk" ]]; then
   source "$HOME/.google-cloud-sdk/completion.bash.inc"
 fi
 
-if [[ -d "$HOME/.nix-profile" ]]; then
-  source "$HOME/.nix-profile/etc/profile.d/nix.sh"
-  [ "$(uname -s)" = "Linux" ] && export LOCALE_ARCHIVE="/usr/lib/locale/locale-archive"
+if [[ -d "/nix" ]]; then
+  export LOCALE_ARCHIVE="/usr/lib/locale/locale-archive"
+  export PATH="${HOME}/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
 fi
 
 if hash go 2> /dev/null; then
