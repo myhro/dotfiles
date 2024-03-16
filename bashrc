@@ -2,7 +2,7 @@
 
 # shellcheck disable=SC1090,SC1091
 
-export PATH="${HOME}/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 HOMEBREW_BIN="/usr/local/bin/brew"
 if [ "$(uname -m)" == "arm64" ]; then
@@ -139,3 +139,6 @@ if [[ -f "$HOME/.fzf.bash" ]]; then
     export FZF_DEFAULT_OPTS="--height 100%"
     export FZF_CTRL_T_OPTS="--preview 'head -100 {}'"
 fi
+
+# User-specific executables should be the first in $PATH:
+export PATH="${HOME}/.local/bin:$PATH"
