@@ -5,7 +5,7 @@ set -eu
 DIR="$HOME/.dotfiles"
 
 if [ -d "$DIR" ]; then
-    for f in bashrc gemrc screenrc vimrc; do
+    for f in bashrc editorconfig gemrc screenrc vimrc; do
         ln -fs "$DIR/$f" "$HOME/.$f"
     done
     ln -fs ~/.bashrc ~/.profile
