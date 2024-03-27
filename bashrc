@@ -2,6 +2,8 @@
 
 # shellcheck disable=SC1090,SC1091
 
+# Enable 'hash' command to find executables
+set -h
 
 HOMEBREW_BIN="/usr/local/bin/brew"
 if [ "$(uname -m)" == "arm64" ]; then
@@ -94,8 +96,7 @@ if [[ -d "$HOME/.google-cloud-sdk" ]]; then
 fi
 
 if [[ -d "/nix" ]]; then
-  export LOCALE_ARCHIVE="/usr/lib/locale/locale-archive"
-  export PATH="${HOME}/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
+  export LOCALE_ARCHIVE="${HOME}/.nix-profile/lib/locale/locale-archive"
 fi
 
 if hash go 2> /dev/null; then
