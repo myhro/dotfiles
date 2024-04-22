@@ -8,6 +8,8 @@ if filereadable(vim_plug)
         Plug 'dense-analysis/ale'
         Plug 'editorconfig/editorconfig-vim'
         Plug 'kien/ctrlp.vim'
+        Plug 'mattn/vim-lsp-settings'
+        Plug 'prabirshrestha/vim-lsp'
         Plug 'tpope/vim-commentary'
         Plug 'tpope/vim-eunuch'
         Plug 'vim-airline/vim-airline'
@@ -112,5 +114,16 @@ if isdirectory(expand($HOME . '/.vim/plugged/'))
         let g:airline_powerline_fonts = 1
         let g:airline_theme = 'powerlineish'
         set laststatus=2
+    endif
+
+    if isdirectory(expand($HOME . '/.vim/plugged/vim-lsp/'))
+        " Prevents <ENTER> in the Quickfix window from conflicting with the
+        " previous <C-m> definition
+        autocmd FileType qf nnoremap <C-m> <CR>
+        " Do not show inline error/warning messages in the document
+        let g:lsp_diagnostics_enabled = 0
+
+        nmap gd <plug>(lsp-definition)
+        nmap gr <plug>(lsp-references)
     endif
 endif
