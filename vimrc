@@ -9,6 +9,8 @@ if filereadable(vim_plug)
         Plug 'editorconfig/editorconfig-vim'
         Plug 'kien/ctrlp.vim'
         Plug 'mattn/vim-lsp-settings'
+        Plug 'prabirshrestha/asyncomplete-lsp.vim'
+        Plug 'prabirshrestha/asyncomplete.vim'
         Plug 'prabirshrestha/vim-lsp'
         Plug 'tpope/vim-commentary'
         Plug 'tpope/vim-eunuch'
@@ -75,9 +77,6 @@ nmap <silent> <C-C> :silent noh<CR>
 
 " File encoding
 set encoding=utf-8
-
-" Omnicomplete
-inoremap <Nul> <C-x><C-o>
 
 " Close preview window automatically
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
