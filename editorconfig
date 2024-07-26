@@ -4,5 +4,5 @@ trim_trailing_whitespace = true
 [*.go]
 indent_style = tab
 
-[*.{js,json,nix,rb,ts}]
+[*.{html,js,json,nix,rb,ts}]
 indent_size = 2
