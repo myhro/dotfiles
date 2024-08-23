@@ -42,6 +42,9 @@ filetype plugin indent on
 set autoindent
 syntax on
 
+" Spell checking
+set spell
+
 " Viewing options, like cursor position and number of lines
 set cursorline
 set linebreak
