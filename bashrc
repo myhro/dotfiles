@@ -32,7 +32,11 @@ alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias tree="tree -I 'node_modules|vendor'"
 alias xclip='xclip -sel clip'
 
-for bc in "/etc/bash_completion" "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"; do
+for bc in \
+    "/etc/bash_completion" \
+    "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" \
+    "${HOME}/.nix-profile/etc/profile.d/bash_completion.sh" \
+    ; do
     if [[ -f "$bc" ]]; then
         . "$bc"
         break
