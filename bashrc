@@ -95,13 +95,14 @@ if [[ -d "$HOME/.google-cloud-sdk" ]]; then
   source "$HOME/.google-cloud-sdk/completion.bash.inc"
 fi
 
-if [[ -d "/nix" ]]; then
-  export LOCALE_ARCHIVE="${HOME}/.nix-profile/lib/locale/locale-archive"
-fi
-
 if hash go 2> /dev/null; then
   GOBIN=$(go env GOPATH)/bin
   export PATH="$GOBIN:$PATH"
+fi
+
+LOCALE_FOLDER="${HOME}/.nix-profile/lib/locale"
+if [[ -d "$LOCALE_FOLDER" ]]; then
+  export LOCALE_ARCHIVE="${LOCALE_FOLDER}/locale-archive"
 fi
 
 if [[ -d "/snap/bin" ]]; then
