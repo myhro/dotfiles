@@ -5,6 +5,10 @@
 # Enable 'hash' command to find executables
 set -h
 
+if [ "$(uname -s)" == "Darwin" ]; then
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+fi
+
 HOMEBREW_BIN="/usr/local/bin/brew"
 if [ "$(uname -m)" == "arm64" ]; then
   HOMEBREW_BIN="/opt/homebrew/bin/brew"
