@@ -84,10 +84,10 @@ export LC_ALL="en_US.UTF-8"
 
 export BAT_THEME="Monokai Extended"
 
-if [[ -d "$HOME/.asdf" ]]; then
-    source "$HOME/.asdf/asdf.sh"
-    source "$HOME/.asdf/completions/asdf.bash"
-    export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+ASDF_BIN="$HOME/.local/bin/asdf"
+if [[ -x "$ASDF_BIN" ]]; then
+    export PATH="$HOME/.asdf/shims:$PATH"
+    source <("$ASDF_BIN" completion bash)
 fi
 
 if [[ -d "$HOME/.google-cloud-sdk" ]]; then
