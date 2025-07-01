@@ -109,6 +109,10 @@ if [[ -d "$LOCALE_FOLDER" ]]; then
   export LOCALE_ARCHIVE="${LOCALE_FOLDER}/locale-archive"
 fi
 
+if [[ -d "$HOME/.config/mise" ]]; then
+    eval "$("$HOME/.local/bin/mise" activate --shims bash)"
+fi
+
 if [[ -d "/snap/bin" ]]; then
   export PATH="/snap/bin:$PATH"
 fi
