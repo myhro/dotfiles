@@ -108,7 +108,7 @@ if [[ -d "$LOCALE_FOLDER" ]]; then
   export LOCALE_ARCHIVE="${LOCALE_FOLDER}/locale-archive"
 fi
 
-if [[ -d "$HOME/.config/mise" ]]; then
+if [[ -x "$HOME/.local/bin/mise" ]]; then
     eval "$("$HOME/.local/bin/mise" activate --shims bash)"
 fi
 
