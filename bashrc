@@ -5,6 +5,15 @@
 # Enable 'hash' command to find executables
 set -h
 
+# Add PATH entries without duplicates
+add_path() {
+    if [[ ":$PATH:" == *":$1:"* ]]; then
+        # Remove existing entry, ensuring it will be added to the front
+        PATH=$(echo "$PATH" | sed -e "s|:$1:|:|g" -e "s|^$1:||" -e "s|:$1$||")
+    fi
+    export PATH="$1:$PATH"
+}
+
 if [ "$(uname -s)" == "Darwin" ]; then
     export BASH_SILENCE_DEPRECATION_WARNING=1
 fi
@@ -19,7 +28,7 @@ if [ -x $HOMEBREW_BIN ]; then
 fi
 
 if [[ -d "${HOMEBREW_PREFIX}/opt/coreutils/libexec/" ]]; then
-    export PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
+    add_path "${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin"
     export MANPATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
@@ -96,7 +105,7 @@ fi
 
 if hash go 2> /dev/null; then
   GOBIN=$(go env GOPATH)/bin
-  export PATH="$GOBIN:$PATH"
+  add_path "$GOBIN"
 fi
 
 LOCALE_FOLDER="${HOME}/.nix-profile/lib/locale"
@@ -141,4 +150,4 @@ if [[ -f "$HOME/.fzf.bash" ]]; then
 fi
 
 # User-specific executables should be the first in $PATH:
-export PATH="${HOME}/.local/bin:$PATH"
+add_path "${HOME}/.local/bin"
