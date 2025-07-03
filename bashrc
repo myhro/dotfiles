@@ -97,12 +97,6 @@ export LC_ALL="en_US.UTF-8"
 
 export BAT_THEME="Monokai Extended"
 
-if [[ -d "$HOME/.asdf" ]]; then
-    source "$HOME/.asdf/asdf.sh"
-    source "$HOME/.asdf/completions/asdf.bash"
-    export ASDF_GOLANG_MOD_VERSION_ENABLED=true
-fi
-
 LOCALE_FOLDER="${HOME}/.nix-profile/lib/locale"
 if [[ -d "$LOCALE_FOLDER" ]]; then
   export LOCALE_ARCHIVE="${LOCALE_FOLDER}/locale-archive"
