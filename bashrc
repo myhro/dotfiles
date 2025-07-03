@@ -103,11 +103,6 @@ if [[ -d "$HOME/.asdf" ]]; then
     export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 fi
 
-if hash go 2> /dev/null; then
-  GOBIN=$(go env GOPATH)/bin
-  add_path "$GOBIN"
-fi
-
 LOCALE_FOLDER="${HOME}/.nix-profile/lib/locale"
 if [[ -d "$LOCALE_FOLDER" ]]; then
   export LOCALE_ARCHIVE="${LOCALE_FOLDER}/locale-archive"
