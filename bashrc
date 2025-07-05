@@ -32,6 +32,11 @@ if [[ -d "${HOMEBREW_PREFIX}/opt/coreutils/libexec/" ]]; then
     export MANPATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
+if [[ -d "/nix" ]]; then
+    add_path "/nix/var/nix/profiles/default/bin"
+    add_path "${HOME}/.nix-profile/bin"
+fi
+
 alias df='df -h'
 alias du='du -sh'
 alias free='free -m'
