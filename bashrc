@@ -139,7 +139,7 @@ if [[ -f "$HOME/.fzf.bash" ]]; then
         export FZF_DEFAULT_COMMAND='ag -g ""'
         export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     fi
-    export FZF_DEFAULT_OPTS="--height 100%"
+    export FZF_DEFAULT_OPTS="--height 25%"
     export FZF_CTRL_T_OPTS="--preview 'head -100 {}'"
 fi
 
