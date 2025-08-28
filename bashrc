@@ -111,6 +111,8 @@ if [[ -x "$HOME/.local/bin/mise" ]]; then
     eval "$("$HOME/.local/bin/mise" activate --shims bash)"
 fi
 
+export SCREENDIR=/tmp/screen
+
 # Fix SSH_AUTH_SOCK for screen sessions
 NEW_SSH_SOCK="$HOME/.ssh/ssh_auth_sock"
 if [[ -S "$SSH_AUTH_SOCK" && ! -e "$NEW_SSH_SOCK" ]]; then
