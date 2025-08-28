@@ -113,7 +113,7 @@ fi
 
 # Fix SSH_AUTH_SOCK for screen sessions
 NEW_SSH_SOCK="$HOME/.ssh/ssh_auth_sock"
-if [[ -S "$SSH_AUTH_SOCK" && ! -h "$NEW_SSH_SOCK" ]]; then
+if [[ -S "$SSH_AUTH_SOCK" && ! -e "$NEW_SSH_SOCK" ]]; then
     ln -fs "$SSH_AUTH_SOCK" "$NEW_SSH_SOCK"
 fi
 export SSH_AUTH_SOCK="$NEW_SSH_SOCK"
