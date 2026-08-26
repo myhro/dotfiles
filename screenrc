@@ -4,6 +4,9 @@ startup_message off
 # Ensure bashrc/profile loading:
 shell -$SHELL
 
+# Ensure 'No other window' messages:
+hardstatus off
+
 # 256-color terminal:
 attrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
