@@ -47,6 +47,7 @@ alias ll='ls --color=auto -lh'
 alias ls='ls --color=auto'
 alias scpi='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias sshi='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+alias sx='screen -x'
 alias tree="tree -I 'node_modules|vendor'"
 alias xclip='xclip -sel clip'
 
