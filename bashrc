@@ -149,3 +149,8 @@ fi
 
 # User-specific executables should be the first in $PATH:
 add_path "${HOME}/.local/bin"
+
+# Machine-specific settings, not tracked by git:
+if [[ -f "$HOME/.bashrc.local" ]]; then
+    source "$HOME/.bashrc.local"
+fi
