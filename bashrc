@@ -116,8 +116,11 @@ export SCREENDIR=/tmp/screen
 
 # Fix SSH_AUTH_SOCK for screen sessions
 NEW_SSH_SOCK="$HOME/.ssh/ssh_auth_sock"
-if [[ -S "$SSH_AUTH_SOCK" && ! -e "$NEW_SSH_SOCK" ]]; then
-    ln -fs "$SSH_AUTH_SOCK" "$NEW_SSH_SOCK"
+if [[ -S "$SSH_AUTH_SOCK" && "$SSH_AUTH_SOCK" != "$NEW_SSH_SOCK" ]]; then
+    SSH_AUTH_SOCK="$NEW_SSH_SOCK" timeout 1 ssh-add -l &> /dev/null
+    if [[ $? -gt 1 ]]; then
+        ln -fs "$SSH_AUTH_SOCK" "$NEW_SSH_SOCK"
+    fi
 fi
 export SSH_AUTH_SOCK="$NEW_SSH_SOCK"
 
